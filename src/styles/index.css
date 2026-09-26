@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-katana: #070809;
+  --katana-red: #E5252A;
+  --katana-glow: rgba(229, 37, 42, 0.4);
+}
+
+html, body {
+  background-color: var(--bg-katana);
+  color: #F2F2F0;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Custom Katana Crimson Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #070809;
+}
+::-webkit-scrollbar-thumb {
+  background: #242830;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #E5252A;
+}
+
+/* Atmospheric Katana Radial Ember Glow */
+.katana-ember-glow {
+  background: radial-gradient(circle at 50% 48%, rgba(229, 37, 42, 0.38) 0%, rgba(139, 0, 0, 0.18) 40%, rgba(7, 8, 9, 0) 72%);
+}
+
+.katana-ambient-spotlight {
+  background: radial-gradient(ellipse at 50% 100%, rgba(229, 37, 42, 0.15) 0%, transparent 60%);
+}
+
+/* Giant Distressed Calligraphy Brush Typography */
+.katana-brush-title {
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #F2F2F0;
+  text-shadow: 
+    0 0 20px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(229, 37, 42, 0.25);
+  user-select: none;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+}
+
+/* Katana Blade Glowing Slash Line */
+.katana-slash-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, #E5252A 30%, #FFFFFF 50%, #E5252A 70%, transparent 100%);
+  box-shadow: 0 0 15px #E5252A, 0 0 30px rgba(229, 37, 42, 0.6);
+  pointer-events: none;
+}
+
+/* Animated Floating Embers */
+@keyframes floatEmber {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-400px) translateX(60px) scale(0.2);
+    opacity: 0;
+  }
+}
+
+.ember {
+  position: absolute;
+  border-radius: 50%;
+  background: #FFA07A;
+  box-shadow: 0 0 8px #E5252A, 0 0 14px #FF4500;
+  pointer-events: none;
+  animation: floatEmber 6s infinite ease-out;
+}
+
+/* Fluid Viewport Slide Sizing for All Screens */
+.slide-screen {
+  min-h: 100dvh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Custom White Circular Social Buttons */
+.katana-social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #070809;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+.katana-social-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+  background-color: #E5252A;
+  color: #FFFFFF;
+  box-shadow: 0 0 20px rgba(229, 37, 42, 0.7);
+}
+
+/* Crimson Action Button */
+.btn-katana-red {
+  background: linear-gradient(135deg, #E5252A 0%, #B81419 100%);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(229, 37, 42, 0.45);
+  transition: all 0.3s ease;
+}
+.btn-katana-red:hover {
+  background: linear-gradient(135deg, #FF3338 0%, #D1181E 100%);
+  box-shadow: 0 0 35px rgba(229, 37, 42, 0.75);
+  transform: translateY(-2px);
+}
